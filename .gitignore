@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+frontend/node_modules/
+*.log
+crypto-dashboard.db
+.env
+package-lock.json
