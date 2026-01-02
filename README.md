@@ -1,7 +1,3 @@
-Perfecto, puedo ayudarte a reescribir tu README para que sea **profesional, serio y centrado en el diseño y la arquitectura real del proyecto**, eliminando los emojis y la documentación de API que ya no aplica. Aquí te propongo una versión mejorada:
-
----
-
 # Crypto Trading Dashboard
 
 **A professional, real-time cryptocurrency trading dashboard built with React, TypeScript, Node.js, and WebSockets. Designed for advanced analytics, real-time trading, and modern, responsive UI.**
