@@ -70,7 +70,7 @@ crypto-trading-dashboard/
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/crypto-trading-dashboard.git
+git clone https://github.com/SoyNeo12/crypto-trading-dashboard.git
 cd crypto-trading-dashboard
 ```
 
