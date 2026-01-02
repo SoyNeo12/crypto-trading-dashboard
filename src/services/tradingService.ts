@@ -1,15 +1,6 @@
 import { logger } from '../utils/logger';
 import { initDB } from '../db/db';
 
-interface Trade {
-  id?: number;
-  symbol: string;
-  type: 'BUY' | 'SELL';
-  price: number;
-  amount: number;
-  timestamp: number;
-}
-
 export async function buy(symbol: string, price: number, amount: number) {
   const db = await initDB();
   const row = await db.get('SELECT balance FROM portfolio LIMIT 1');

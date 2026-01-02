@@ -19,7 +19,7 @@ router.get('/price/:symbol', async (req, res) => {
 });
 
 // GET /api/portfolio
-router.get('/portfolio', async (req, res) => {
+router.get('/portfolio', async (_req, res) => {
   try {
     const portfolio = await getPortfolio();
     res.json(portfolio);
@@ -30,7 +30,7 @@ router.get('/portfolio', async (req, res) => {
 });
 
 // GET /api/metrics
-router.get('/metrics', async (req, res) => {
+router.get('/metrics', async (_req, res) => {
   try {
     const metrics = await getMetrics();
     res.json(metrics);
@@ -45,7 +45,7 @@ router.post('/trade/buy', async (req, res) => {
   try {
     const schema = z.object({
       symbol: z.string(),
-      amount: z.number().positive(),
+      amount: z.number().positive()
     });
     const { symbol, amount } = schema.parse(req.body);
     const price = await getCryptoPrice(symbol.toLowerCase());
@@ -62,7 +62,7 @@ router.post('/trade/sell', async (req, res) => {
   try {
     const schema = z.object({
       symbol: z.string(),
-      amount: z.number().positive(),
+      amount: z.number().positive()
     });
     const { symbol, amount } = schema.parse(req.body);
     const price = await getCryptoPrice(symbol.toLowerCase());
