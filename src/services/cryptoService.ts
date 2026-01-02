@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export async function getCryptoPrice(symbol: string): Promise<number> {
   const res = await axios.get(

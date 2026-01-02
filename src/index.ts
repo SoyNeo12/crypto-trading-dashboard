@@ -1,2 +1,2 @@
-import "./api/server";
-import "./api/wsServer";
+import './api/server';
+import './api/wsServer';

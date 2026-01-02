@@ -1,22 +1,23 @@
-import { getPortfolio } from "./tradingService";
+import { getPortfolio } from './tradingService';
 
 export async function getMetrics() {
-    const portfolio = await getPortfolio();
+  const portfolio = await getPortfolio();
 
-    const roi = portfolio.trades.length
-        ? (portfolio.balance / 10000 - 1) * 100
-        : 0;
+  const initialBalance = 10000;
+  const roi = ((portfolio.balance / initialBalance - 1) * 100).toFixed(2);
 
-    const totalTrades = portfolio.trades.length;
+  const totalTrades = portfolio.trades.length;
 
-    const profit = portfolio.trades
-        .filter(t => t.type === "SELL")
-        .reduce((sum, t) => sum + t.price * t.amount, 0);
+  const buyTotal = portfolio.trades.filter((t) => t.type === 'BUY').reduce((sum, t) => sum + t.price * t.amount, 0);
 
-    return {
-        balance: portfolio.balance,
-        roi: roi.toFixed(2) + "%",
-        totalTrades,
-        profit
-    };
+  const sellTotal = portfolio.trades.filter((t) => t.type === 'SELL').reduce((sum, t) => sum + t.price * t.amount, 0);
+
+  const profit = sellTotal - buyTotal;
+
+  return {
+    balance: portfolio.balance,
+    roi: roi + '%',
+    totalTrades,
+    profit
+  };
 }
