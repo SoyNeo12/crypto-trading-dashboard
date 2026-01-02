@@ -1,7 +1,7 @@
 {
   "name": "crypto-trading-dashboard",
   "version": "0.1.0",
-  "description": "A professional real-time cryptocurrency trading dashboard with interactive trading, advanced analytics, and a modern, responsive user interface built with React, TypeScript, Node.js, and WebSockets.",
+  "description": "",
   "main": "",
   "scripts": {
     "dev": "ts-node src/index.ts",
